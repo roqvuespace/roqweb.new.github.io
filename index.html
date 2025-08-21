@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roqvue.space - Shaping Space</title>
-
-
-  <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-
+  <title>Roqvue.space - Hero Example</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
   <div id="app"></div>
@@ -17,11 +14,9 @@
     import "./components/Hero.js"
 
     function App() {
-      return R`
-        <Hero title="Welcome to Roqvue">
-          <p>We build advanced space technology.</p>
-        </Hero>
-      `
+      return R("Hero", { title: "Welcome to Roqvue" },
+        R("p", {}, "We build advanced space technology that pushes humanity forward.")
+      )
     }
 
     render(App, document.getElementById("app"))
