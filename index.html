@@ -14,9 +14,11 @@
     import "./components/NavBar.js"
     import "./components/Hero.js"
     import "./components/Stats.js"
+    import "./components/Technologies.js"
 
     function App() {
     // Wrapper container
+    const technologies = R("Technologies")
     const container = document.createElement("div")
 
     // Header
@@ -43,6 +45,7 @@
     // Append nodes safely
     if (header) container.appendChild(header)
     if (stats) container.appendChild(stats)
+    container.appendChild(technologies)
 
     return container
     }

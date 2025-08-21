@@ -2,7 +2,7 @@ import { define, R } from "../roqvue.js"
 
 export function Stats({ items = [] }) {
   const section = document.createElement("section")
-  section.className = "py-16 bg-gray-900" // bg-card equivalent
+  section.className = "py-16 bg-gray-900" 
 
   const container = document.createElement("div")
   container.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
