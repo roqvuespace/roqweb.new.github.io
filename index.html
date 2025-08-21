@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roqvue.space - Custom Syntax</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script type="module">
+    import { render, R } from "./roqvue.js"
+    import "./components/Hero.js"
+
+    function App() {
+      return R`
+        <Hero title="Welcome to Roqvue">
+          <p>We build advanced space technology.</p>
+        </Hero>
+      `
+    }
+
+    render(App, document.getElementById("app"))
+  </script>
+</body>
+</html>
