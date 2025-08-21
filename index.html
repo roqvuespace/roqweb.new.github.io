@@ -22,13 +22,15 @@
         { label: "Contact", href: "#" },
       ]
 
-      return R("div", {}, 
-        R("NavBar", { logo: "Roqvue", links }),
-        R("Header", 
-          { title: "Welcome to Roqvue", subtitle: "Shaping the future of space technology" },
-          R("p", {}, "Explore advanced spacecraft designs, cutting-edge research, and innovative solutions.")
-        )
-      )
+    return R("Header", {
+        badgeText: "Next Generation Space Technology",
+        title: 'Pioneering the <span class="text-indigo-500 block">Future of Space</span>',
+        subtitle: "Developing advanced rockets, autonomous drone ships, and cutting-edge satellites to revolutionize space exploration and ISP services.",
+        buttons: [
+        { label: "Explore Our Technology", onClick: () => alert("Explore clicked") },
+        { label: "Watch Launch Video", variant: "outline", onClick: () => alert("Watch clicked") }
+        ]
+    })
     }
 
     render(App, document.getElementById("app"))
