@@ -2,7 +2,9 @@ import { define, R } from "../roqvue.js"
 
 export function Header({ title, subtitle, children }) {
   const container = document.createElement("header")
-  container.className = "relative bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white p-12 rounded-b-3xl shadow-lg flex flex-col items-center text-center"
+  
+  container.style.backgroundColor = "oklch(0.65 0.15 65)"
+  container.className = "relative text-white p-12 rounded-b-3xl shadow-lg flex flex-col items-center text-center"
 
   // Main title
   const h1 = document.createElement("h1")
