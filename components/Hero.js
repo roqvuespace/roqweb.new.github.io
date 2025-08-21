@@ -21,7 +21,7 @@ export function Header({ title, subtitle, badgeText, buttons = [] }) {
   starContainer.className = "absolute inset-0 pointer-events-none overflow-hidden"
 
   // Generate stars
-  const numStars = 50
+  const numStars = 80
   for (let i = 0; i < numStars; i++) {
     const star = document.createElement("div")
     const size = Math.random() * 2 + 1
