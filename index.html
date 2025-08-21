@@ -3,19 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roqvue.space - Shaping Space</title>
+  <title>Roqvue - Shaping Space</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100">
   <div id="app"></div>
 
   <script type="module">
     import { render, R } from "./roqvue.js"
+    import "./components/NavBar.js"
     import "./components/Hero.js"
 
     function App() {
-      return R("Hero", { title: "Welcome to Roqvue" },
-        R("p", {}, "We build advanced space technology that pushes humanity forward.")
+      const links = [
+        { label: "Home", href: "#" },
+        { label: "About", href: "#" },
+        { label: "Projects", href: "#" },
+        { label: "Contact", href: "#" },
+      ]
+
+      return R("div", {}, 
+        R("NavBar", { logo: "Roqvue", links }),
+        R("Header", 
+          { title: "Welcome to Roqvue", subtitle: "Shaping the future of space technology" },
+          R("p", {}, "Explore advanced spacecraft designs, cutting-edge research, and innovative solutions.")
+        )
       )
     }
 
