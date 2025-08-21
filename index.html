@@ -15,6 +15,8 @@
     import "./components/Hero.js"
     import "./components/Stats.js"
     import "./components/Technologies.js"
+    import "./components/CtaSection.js"
+    import "./components/About.js"
 
     function App() {
       const container = document.createElement("div")
@@ -42,6 +44,25 @@
         ]
       })
 
+
+    const about = R("About", {
+      title: "Our Mission",
+      text: "At Roqvue.space, we believe that space technology should be accessible, reliable, and sustainable. Our mission is to democratize space access while building the infrastructure that will support humanity's expansion beyond Earth.",
+      image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+    })
+
+
+
+    const cta = R("CtaSection", {
+      title: "Let’s Launch the Future Together",
+      subtitle: "Partner with Roqvue for innovative space solutions and groundbreaking missions.",
+      buttons: [
+        { label: "Get in Touch", onClick: () => alert("Contact clicked") },
+        { label: "Join Our Mission", variant: "outline", onClick: () => alert("Join clicked") }
+      ]
+    })
+
+
       // Make navbar float on top
       if (navbar) {
         navbar.style.position = "absolute"
@@ -68,6 +89,8 @@
       if (navbar) header.prepend(navbar) 
       if (stats) container.appendChild(stats)
       container.appendChild(technologies)
+      container.appendChild(about)
+      container.appendChild(cta)
 
       return container
     }
