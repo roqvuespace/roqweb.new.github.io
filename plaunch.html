@@ -12,7 +12,8 @@
   <script type="module">
     import { render, R } from "./roqvue.js"
     import "./components/NavBar.js"
-    import "./components/Hero.js"
+    import "./components/Hero_Launch.js"
+    import "./components/Programs_Launch.js"
 
 
 
@@ -20,12 +21,12 @@
       const container = document.createElement("div")
 
       const header = R("Header", {
-        badgeText: "Next Generation Space Technology",
-        title: 'Pioneering the <span class="text-indigo-500 block">Future of Space</span>',
-        subtitle: "Developing advanced rockets, autonomous drone ships, and cutting-edge satellites to revolutionize space exploration and ISP services.",
+        badgeText: "Launch Services (Soon)",
+        title: 'Custom <span class="text-indigo-500 block">Launch Programs</span>',
+        subtitle: "From small satellites to interplanetary missions, our launch programs provide reliable, cost-effective access to space for every mission profile.",
         buttons: [
-          { label: "Explore Our Technology", onClick: () => alert("Explore clicked") },
-          { label: "Watch Launch Video", variant: "outline", onClick: () => alert("Watch clicked") }
+          { label: "Explore Our Programs", onClick: () => alert("Explore clicked") },
+          { label: "View Launch Schedule", variant: "outline", onClick: () => alert("Watch clicked") }
         ]
       })
 
@@ -51,20 +52,14 @@
       }
 
       // Stats
-      const stats = R("Stats", {
-        items: [
-          { value: "0+", label: "Successful Launches" },
-          { value: "100%", label: "Mission Success Rate" },
-          { value: "0+", label: "Satellites Deployed" },
-          { value: "0/7", label: "ISP Coverage" }
-        ]
-      })
 
-      const technologies = R("Technologies")
+      const launchPrograms = R("LaunchPrograms")
 
       // Append nodes
       if (header) container.appendChild(header)
       if (navbar) header.prepend(navbar) 
+      container.appendChild(launchPrograms)
+
 
 
       return container
