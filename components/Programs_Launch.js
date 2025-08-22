@@ -3,7 +3,7 @@ import { define } from "../roqvue.js"
 // Utility: icon wrapper
 function createIcon(svg) {
   const wrapper = document.createElement("div")
-  wrapper.className = "p-3 bg-indigo-500/10 rounded-full flex items-center justify-center"
+  wrapper.className = "p-4 bg-indigo-500/10 rounded-full flex items-center justify-center"
   wrapper.innerHTML = svg
   return wrapper
 }
@@ -11,11 +11,11 @@ function createIcon(svg) {
 // Utility: feature item with check icon
 function createFeatureItem(text) {
   const li = document.createElement("li")
-  li.className = "flex items-center space-x-2 text-sm text-gray-400"
+  li.className = "flex items-center space-x-2 text-base text-gray-300"
 
   const icon = document.createElement("span")
   icon.innerHTML = `
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-indigo-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-indigo-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
     </svg>`
   li.appendChild(icon)
@@ -31,21 +31,21 @@ function createFeatureItem(text) {
 function createCard({ icon, title, description, price, capacity, missions, features }) {
   const card = document.createElement("div")
   card.className =
-    "group bg-gray-800 text-white rounded-xl overflow-hidden flex flex-col transition transform hover:-translate-y-2 hover:shadow-2xl duration-300"
+    "group bg-gray-800 text-white rounded-2xl overflow-hidden flex flex-col transition transform hover:-translate-y-3 hover:shadow-2xl duration-300"
 
   // Header
   const header = document.createElement("div")
-  header.className = "p-6 flex items-center space-x-4"
+  header.className = "p-10 flex items-center space-x-6"
   header.appendChild(createIcon(icon))
 
   const textWrap = document.createElement("div")
   const h3 = document.createElement("h3")
-  h3.className = "text-lg font-semibold"
+  h3.className = "text-2xl font-semibold"
   h3.textContent = title
   textWrap.appendChild(h3)
 
   const desc = document.createElement("p")
-  desc.className = "text-sm text-gray-400"
+  desc.className = "text-base text-gray-400 mt-1"
   desc.textContent = description
   textWrap.appendChild(desc)
 
@@ -54,7 +54,7 @@ function createCard({ icon, title, description, price, capacity, missions, featu
 
   // Stats
   const stats = document.createElement("div")
-  stats.className = "grid grid-cols-3 gap-4 px-6 pb-6"
+  stats.className = "grid grid-cols-3 gap-6 px-10 pb-8"
 
   const statData = [
     { label: "Price", value: price },
@@ -66,8 +66,8 @@ function createCard({ icon, title, description, price, capacity, missions, featu
     const box = document.createElement("div")
     box.className = "text-center"
     box.innerHTML = `
-      <div class="text-lg font-bold text-indigo-500">${stat.value}</div>
-      <div class="text-xs text-gray-400">${stat.label}</div>
+      <div class="text-2xl font-bold text-indigo-500">${stat.value}</div>
+      <div class="text-sm text-gray-400">${stat.label}</div>
     `
     stats.appendChild(box)
   })
@@ -76,17 +76,17 @@ function createCard({ icon, title, description, price, capacity, missions, featu
 
   // Features
   const ul = document.createElement("ul")
-  ul.className = "space-y-2 px-6 pb-6"
+  ul.className = "space-y-3 px-10 pb-8"
   features.forEach(f => ul.appendChild(createFeatureItem(f)))
   card.appendChild(ul)
 
   // Button
   const btn = document.createElement("button")
   btn.className =
-    "m-6 w-full bg-indigo-600 hover:bg-indigo-700 transition rounded-lg py-2 px-4 flex items-center justify-center text-sm font-medium"
+    "m-10 w-full bg-indigo-600 hover:bg-indigo-700 transition rounded-lg py-3 px-6 flex items-center justify-center text-base font-medium"
   btn.innerHTML = `
     Learn More
-    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
     </svg>
   `
@@ -97,22 +97,22 @@ function createCard({ icon, title, description, price, capacity, missions, featu
 
 export function LaunchPrograms() {
   const container = document.createElement("section")
-  container.className = "py-20 bg-gray-900"
+  container.className = "py-24 bg-gray-900"
 
   const inner = document.createElement("div")
-  inner.className = "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+  inner.className = "max-w-7xl mx-auto px-6 lg:px-8"
 
   // Header
   const header = document.createElement("div")
-  header.className = "text-center mb-16"
+  header.className = "text-center mb-20"
 
   const h2 = document.createElement("h2")
-  h2.className = "text-3xl md:text-4xl font-bold text-white mb-4"
+  h2.className = "text-4xl md:text-5xl font-bold text-white mb-6"
   h2.textContent = "Our Launch Programs"
   header.appendChild(h2)
 
   const p = document.createElement("p")
-  p.className = "text-lg text-gray-400 max-w-2xl mx-auto"
+  p.className = "text-xl text-gray-400 max-w-3xl mx-auto"
   p.textContent =
     "Tailored launch solutions for every mission requirement, from commercial deployments to deep space exploration."
   header.appendChild(p)
@@ -121,11 +121,11 @@ export function LaunchPrograms() {
 
   // Grid
   const grid = document.createElement("div")
-  grid.className = "grid grid-cols-1 md:grid-cols-2 gap-8"
+  grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
 
   const cardsData = [
     {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l-2 2m0 0l-2 2m2-2l2 2m0 0v7m0 0h7m-7 0l2-2m0 0l2-2m-2 2l-2-2" />
              </svg>`,
       title: "Commercial Missions",
@@ -138,6 +138,51 @@ export function LaunchPrograms() {
         "Custom mission profile",
         "Priority scheduling",
         "Mission insurance"
+      ]
+    },
+    {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h1l1 6h14l1-6h1" />
+             </svg>`,
+      title: "Autonomous Drone Ships",
+      description: "AI-powered recovery platforms for safe rocket landings at sea",
+      price: "N/A",
+      capacity: "Supports heavy boosters",
+      missions: "120",
+      features: [
+        "GPS precision landing",
+        "Weather-adaptive positioning",
+        "99% recovery success rate"
+      ]
+    },
+    {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+             </svg>`,
+      title: "Advanced Satellites",
+      description: "Next-generation communication satellites for global connectivity",
+      price: "$150M",
+      capacity: "Varies per mission",
+      missions: "54",
+      features: [
+        "10-year operational life",
+        "High-throughput capacity",
+        "Low-latency communication"
+      ]
+    },
+    {
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13V9" />
+             </svg>`,
+      title: "ISP Services",
+      description: "Satellite-based internet providing global high-speed connectivity",
+      price: "$99/mo",
+      capacity: "1Gbps+ speeds",
+      missions: "Global coverage",
+      features: [
+        "Global availability",
+        "Enterprise solutions",
+        "Low-latency service"
       ]
     }
   ]
