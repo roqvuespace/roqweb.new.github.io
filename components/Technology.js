@@ -112,7 +112,7 @@ export function TechnologyPage() {
 
   const tabsList = document.createElement("div")
   tabsList.className = "flex space-x-4 mb-8"
-  const tabButtons = ["Raven - Rocket", "Drone Ships", "Satellites", "ISP Services"]
+  const tabButtons = ["Raven - Rocket", "Drone Ships", "Satellites", "ISP Services", "Eagle"]
   const tabContents = [rocketSpecs, droneShipSpecs, satelliteSpecs, ispSpecs]
 
   const tabContentContainer = document.createElement("div")
