@@ -10,10 +10,18 @@ export function NavBar({ logo, links = [] }) {
   container.className = "max-w-7xl mx-auto px-6 py-4 flex justify-between items-center"
 
   // Logo
-  const logoEl = document.createElement("div")
-  logoEl.className = "text-2xl font-bold text-white"
-  logoEl.textContent = logo || "Roqvue"
-  container.appendChild(logoEl)
+  const logoLink = document.createElement("a")
+  logoLink.href = "/" // root
+  logoLink.className = "text-2xl font-bold text-white"
+  logoLink.textContent = logo || "Roqvue"
+  logoLink.setAttribute("aria-label", "Home")
+
+  logoLink.addEventListener("click", (e) => {
+    e.preventDefault()        // Prevent default SPA routing
+    window.location.href = "/" // Force full page reload
+  })
+
+  container.appendChild(logoLink)
 
   // Desktop links
   const linkContainer = document.createElement("div")
