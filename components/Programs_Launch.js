@@ -83,7 +83,7 @@ function createCard({ icon, title, description, price, capacity, missions, featu
   // Button
   const btn = document.createElement("button")
   btn.className =
-    "m-10 w-full bg-indigo-600 hover:bg-indigo-700 transition rounded-lg py-3 px-6 flex items-center justify-center text-base font-medium"
+    "m-10 w-500 bg-indigo-600 hover:bg-indigo-700 transition rounded-lg py-3 px-6 flex items-center justify-center text-base font-medium"
   btn.innerHTML = `
     Learn More
     <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
