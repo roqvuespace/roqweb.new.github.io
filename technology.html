@@ -14,6 +14,8 @@
     import "./components/NavBar.js"
     import { TechnologyPage } from "./components/Technology.js"
     import "./components/TechHero.js"
+    import "./components/Footer.js"
+
 
 
 
@@ -51,10 +53,13 @@
         navbar.style.zIndex = "50"
       }
 
+      const footer = R("Footer")
+
       // Append nodes
       if (header) container.appendChild(header)
       if (navbar) header.prepend(navbar) 
       container.appendChild(R("TechnologyPage"))
+      container.appendChild(footer)
 
       return container
     }

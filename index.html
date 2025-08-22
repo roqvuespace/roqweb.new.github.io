@@ -43,6 +43,7 @@
     import "./components/Technologies.js"
     import "./components/CtaSection.js"
     import "./components/About.js"
+    import "./components/Footer.js"
 
     function App() {
       const container = document.createElement("div")
@@ -108,6 +109,7 @@
         ]
       })
 
+      const footer = R("Footer")
       const technologies = R("Technologies")
 
       // Append nodes
@@ -117,6 +119,7 @@
       container.appendChild(technologies)
       container.appendChild(about)
       container.appendChild(cta)
+      container.appendChild(footer)
 
       return container
     }

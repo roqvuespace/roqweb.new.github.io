@@ -17,6 +17,7 @@
     import "./components/LaunchSchedule.js"
     import "./components/MissionCapabilities.js"
     import "./components/LaunchCta.js"
+    import "./components/Footer.js"
 
 
 
@@ -76,6 +77,7 @@
     ]
     })
 
+      const footer = R("Footer")
 
       // Append nodes
       if (header) container.appendChild(header)
@@ -84,6 +86,7 @@
       container.appendChild(launchSchedule)
       container.appendChild(missionCapabilities)
       container.appendChild(cta)
+      container.appendChild(footer)
 
 
       return container
