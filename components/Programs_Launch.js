@@ -8,7 +8,7 @@ function createIcon(svg) {
   return wrapper
 }
 
-// Utility: feature item with check icon
+// Utility: feature item
 function createFeatureItem(text) {
   const li = document.createElement("li")
   li.className = "flex items-center space-x-2 text-base text-gray-300"
@@ -57,9 +57,9 @@ function createCard({ icon, title, description, price, capacity, missions, featu
   stats.className = "grid grid-cols-3 gap-6 px-10 pb-8"
 
   const statData = [
-    { label: "Price", value: price },
-    { label: "Capacity", value: capacity },
-    { label: "Missions", value: missions }
+    { label: "Starting Price", value: price },
+    { label: "Payload Capacity", value: capacity },
+    { label: "Missions Completed", value: missions }
   ]
 
   statData.forEach(stat => {
@@ -121,17 +121,15 @@ export function LaunchPrograms() {
 
   // Grid
   const grid = document.createElement("div")
-  grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+  grid.className = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10"
 
   const cardsData = [
     {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l-2 2m0 0l-2 2m2-2l2 2m0 0v7m0 0h7m-7 0l2-2m0 0l2-2m-2 2l-2-2" />
-             </svg>`,
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 19V6l-2 2m0 0l-2 2m2-2l2 2m0 0v7m0 0h7m-7 0l2-2m0 0l2-2m-2 2l-2-2"/></svg>`,
       title: "Commercial Missions",
       description: "Dedicated launches for commercial satellites and payloads",
-      price: "$62M",
-      capacity: "4,000 kg",
+      price: "Starting at $62M",
+      capacity: "Up to 4,000 kg to LEO",
       missions: "0",
       features: [
         "Dedicated launch vehicle",
@@ -141,48 +139,45 @@ export function LaunchPrograms() {
       ]
     },
     {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h1l1 6h14l1-6h1" />
-             </svg>`,
-      title: "Autonomous Drone Ships",
-      description: "AI-powered recovery platforms for safe rocket landings at sea",
-      price: "N/A",
-      capacity: "Supports heavy boosters",
-      missions: "120",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10" stroke-width="2"/></svg>`,
+      title: "Rideshare Program",
+      description: "Cost-effective access to space for small satellites",
+      price: "Starting at $1M",
+      capacity: "Up to 500 kg per customer",
+      missions: "0",
       features: [
-        "GPS precision landing",
-        "Weather-adaptive positioning",
-        "99% recovery success rate"
+        "Shared launch costs",
+        "Flexible payload sizes",
+        "Multiple orbit options",
+        "Quick integration"
       ]
     },
     {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-               <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-             </svg>`,
-      title: "Advanced Satellites",
-      description: "Next-generation communication satellites for global connectivity",
-      price: "$150M",
-      capacity: "Varies per mission",
-      missions: "54",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 10h1l1 6h14l1-6h1"/></svg>`,
+      title: "Government & Defense",
+      description: "Secure launches for national security and government payloads",
+      price: "Contact for pricing",
+      capacity: "Mission-specific",
+      missions: "0",
       features: [
-        "10-year operational life",
-        "High-throughput capacity",
-        "Low-latency communication"
+        "Security clearance",
+        "Classified mission support",
+        "Rapid response capability",
+        "Custom configurations"
       ]
     },
     {
-      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13V9" />
-             </svg>`,
-      title: "ISP Services",
-      description: "Satellite-based internet providing global high-speed connectivity",
-      price: "$99/mo",
-      capacity: "1Gbps+ speeds",
-      missions: "Global coverage",
+      icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8m-9 13V9"/></svg>`,
+      title: "Interplanetary Missions",
+      description: "Deep space missions to Mars, Moon, and beyond",
+      price: "Starting at $90M",
+      capacity: "Up to ?? kg to Mars",
+      missions: "0",
       features: [
-        "Global availability",
-        "Enterprise solutions",
-        "Low-latency service"
+        "Extended mission support",
+        "Deep space trajectories",
+        "Advanced guidance systems",
+        "Mission planning"
       ]
     }
   ]
