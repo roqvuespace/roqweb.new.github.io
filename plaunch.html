@@ -14,6 +14,9 @@
     import "./components/NavBar.js"
     import "./components/Hero_Launch.js"
     import "./components/Programs_Launch.js"
+    import "./components/LaunchSchedule.js"
+    import "./components/MissionCapabilities.js"
+    import "./components/LaunchCta.js"
 
 
 
@@ -53,13 +56,34 @@
 
       // Stats
 
-      const launchPrograms = R("LaunchPrograms")
+    const launchPrograms = R("LaunchPrograms")
+    const cta = R("CTASection")
+    const missionCapabilities = R("MissionCapabilities")
+    const launchSchedule = R("LaunchSchedule", {
+    upcomingLaunches: [
+        {
+        mission: "N/A",
+        customer: "N/A",
+        date: "N/A",
+        time: "N/A",
+        vehicle: "N/A",
+        payload: "N/A",
+        status: "confirmed"
+        }
+    ],
+    pastMissions: [
+        
+    ]
+    })
+
 
       // Append nodes
       if (header) container.appendChild(header)
       if (navbar) header.prepend(navbar) 
       container.appendChild(launchPrograms)
-
+      container.appendChild(launchSchedule)
+      container.appendChild(missionCapabilities)
+      container.appendChild(cta)
 
 
       return container
