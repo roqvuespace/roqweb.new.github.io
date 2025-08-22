@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roqvue - Shaping Space</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="m-0 p-0">
+  <div id="app"></div>
+
+  <script type="module">
+    import { render, R } from "./roqvue.js"
+    import "./components/NavBar.js"
+    import "./components/Hero.js"
+
+
+
+    function App() {
+      const container = document.createElement("div")
+
+      const header = R("Header", {
+        badgeText: "Next Generation Space Technology",
+        title: 'Pioneering the <span class="text-indigo-500 block">Future of Space</span>',
+        subtitle: "Developing advanced rockets, autonomous drone ships, and cutting-edge satellites to revolutionize space exploration and ISP services.",
+        buttons: [
+          { label: "Explore Our Technology", onClick: () => alert("Explore clicked") },
+          { label: "Watch Launch Video", variant: "outline", onClick: () => alert("Watch clicked") }
+        ]
+      })
+
+      // NavBar overlayed on top of Header
+      const navbar = R("NavBar", {
+        logo: "Roqvue",
+        links: [
+          // { label: "Lauch Programs", href: "#launch-programs" },
+          // { label: "Services", href: "#Services" },
+          // { label: "Technology", href: "#tech" },
+          // { label: "About", href: "#About" },
+          // { label: "Contact", href: "#contact" },
+        ]
+      })
+
+      // Make navbar float on top
+      if (navbar) {
+        navbar.style.position = "absolute"
+        navbar.style.top = "0"
+        navbar.style.left = "0"
+        navbar.style.width = "100%"
+        navbar.style.zIndex = "50"
+      }
+
+      // Stats
+      const stats = R("Stats", {
+        items: [
+          { value: "0+", label: "Successful Launches" },
+          { value: "100%", label: "Mission Success Rate" },
+          { value: "0+", label: "Satellites Deployed" },
+          { value: "0/7", label: "ISP Coverage" }
+        ]
+      })
+
+      const technologies = R("Technologies")
+
+      // Append nodes
+      if (header) container.appendChild(header)
+      if (navbar) header.prepend(navbar) 
+
+
+      return container
+    }
+
+    render(App, document.getElementById("app"))
+  </script>
+</body>
+</html>
