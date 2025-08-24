@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roqvue - Shaping Space</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+
+
+</head>
+<body class="m-0 p-0">
+  <div id="app"></div>
+
+  <script type="module">
+    import { render, R } from "./roqvue.js"
+    import "./components/NavBar.js"
+    import "./components/infraHero.js"
+    import "./components/CtaSection.js"
+    import "./components/Footer.js"
+
+    function App() {
+      const container = document.createElement("div")
+
+      // Header // Is actually the hero.
+
+      // FIXME: Rename all the internal code from the 'header'
+      // to 'hero'.
+
+      const header = R("Header", {
+        badgeText: "Next Generation Space Infrastructure",
+        title: 'Our <span class="text-indigo-500 block">Space Infrastructure</span>',
+        subtitle: "All our current developed infrastructure. Curren progress.",
+        buttons: [
+        //   { label: "Explore Our Technology", onClick: () => alert("Explore clicked") },
+        //   { label: "Watch Launch Video", variant: "outline", onClick: () => alert("Watch clicked") }
+        ]
+      })
+
+      // NavBar overlayed on top of Header
+      const navbar = R("NavBar", {
+        logo: "Roqvue",
+        links: [
+          { label: "Lauch Programs", href: "plaunch.html" },
+          { label: "Technology", href: "technology.html" },
+          { label: "Our Infrastructure", href: "indrastructure.html" },
+          // { label: "About", href: "#About" },
+          // { label: "Contact", href: "#contact" },
+        ]
+      })
+
+
+    const cta = R("CtaSection", {
+      title: "Let’s Launch the Future Together",
+      subtitle: "Partner with Roqvue for innovative space solutions and groundbreaking missions.",
+      buttons: [
+        { label: "Get in Touch", onClick: () => alert("Contact clicked") },
+        { label: "Join Our Mission", variant: "outline", onClick: () => alert("Join clicked") }
+      ]
+    })
+
+
+      // Make navbar float on top
+      if (navbar) {
+        navbar.style.position = "absolute"
+        navbar.style.top = "0"
+        navbar.style.left = "0"
+        navbar.style.width = "100%"
+        navbar.style.zIndex = "50"
+      }
+
+      const footer = R("Footer")
+
+      // Append nodes
+      if (header) container.appendChild(header)
+      if (navbar) header.prepend(navbar) 
+      container.appendChild(cta)
+      container.appendChild(footer)
+
+      return container
+    }
+
+    render(App, document.getElementById("app"))
+  </script>
+</body>
+</html>
