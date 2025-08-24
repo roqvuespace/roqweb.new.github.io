@@ -45,7 +45,14 @@ function createScheduleCard({ name, category, date, developed, uses, payload, st
 
   const statusBadge = document.createElement("div")
   statusBadge.className = "text-center"
-  const statusColor = status === "confirmed" ? "green" : "gray"
+  
+  const statusColors = {
+    active: "green",
+    maintenance: "orange",
+    inactive: "red",
+  };
+
+const statusColor = statusColors[status] || "gray"; // gray as default
   statusBadge.appendChild(createBadge(status, statusColor))
 
   content.appendChild(pieceInfo)
