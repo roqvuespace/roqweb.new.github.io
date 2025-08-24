@@ -18,6 +18,7 @@
     import "./components/infraHero.js"
     import "./components/CtaSection.js"
     import "./components/Footer.js"
+    import "./components/InfraComponents.js"
 
     function App() {
       const container = document.createElement("div")
@@ -50,6 +51,22 @@
       })
 
 
+    const launchSchedule = R("LaunchSchedule", {
+    upcomingLaunches: [
+        {
+        name: "N/A",
+        category: "N/A",
+        developed: "N/A",
+        uses: "N/A",
+        payload: "N/A",
+        status: "confirmed"
+        }
+    ],
+    pastMissions: [
+        
+    ]
+    })
+
     const cta = R("CtaSection", {
       title: "Let’s Launch the Future Together",
       subtitle: "Partner with Roqvue for innovative space solutions and groundbreaking missions.",
@@ -74,6 +91,7 @@
       // Append nodes
       if (header) container.appendChild(header)
       if (navbar) header.prepend(navbar) 
+      container.appendChild(launchSchedule)
       container.appendChild(cta)
       container.appendChild(footer)
 
