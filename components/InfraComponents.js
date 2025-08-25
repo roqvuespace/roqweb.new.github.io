@@ -52,7 +52,7 @@ function createScheduleCard({ name, category, date, developed, uses, payload, st
     inactive: "red",
   };
 
-const statusColor = statusColors[status] || "gray"; // gray as default
+  const statusColor = statusColors[status] || "gray"; // gray as default
   statusBadge.appendChild(createBadge(status, statusColor))
 
   content.appendChild(pieceInfo)
